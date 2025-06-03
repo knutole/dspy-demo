@@ -31,6 +31,8 @@ uv run python demo-dspy.py
 
 What you need is 1) examples to try your program on, and 2) some metric for what is the correct way to process your example. Look at `training-data.json` for example. There we define two things: 1) "text" key with an unwashed comment, and 2) a "redactions" key with a list of words that we want redacted from the text. Writing a metric method to check our work, is then simply a matter of comparing the washed text with the desired redactions.
 
+Note: The dataset in this repo is _synthetic_, and any relation to any real person is strictly coincidental. :)
+
 #### Convert your dataset to DSPy-compatible format
 
 Define a method to convert your JSON (or whatever) dataset to `dspy.Example` format:
