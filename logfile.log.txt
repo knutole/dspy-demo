@@ -1,0 +1,180 @@
+❯ uv run python demo-dspy.py
+
+2025/06/03 19:44:52 INFO dspy.teleprompt.mipro_optimizer_v2: 
+RUNNING WITH THE FOLLOWING LIGHT AUTO RUN SETTINGS:
+num_trials: 10
+minibatch: False
+num_fewshot_candidates: 6
+num_instruct_candidates: 3
+valset size: 11
+
+Projected Language Model (LM) Calls
+
+Based on the parameters you have set, the maximum number of LM calls is projected as follows:
+
+- Prompt Generation: 10 data summarizer calls + 3 * 1 lm calls in program + (2) lm calls in program-aware proposer = 15 prompt model calls
+- Program Evaluation: 11 examples in val set * 10 batches = 110 LM program calls
+
+Estimated Cost Calculation:
+
+Total Cost = (Number of calls to task model * (Avg Input Token Length per Call * Task Model Price per Input Token + Avg Output Token Length per Call * Task Model Price per Output Token)
+            + (Number of program calls * (Avg Input Token Length per Call * Task Prompt Price per Input Token + Avg Output Token Length per Call * Prompt Model Price per Output Token).
+
+For a preliminary estimate of potential costs, we recommend you perform your own calculations based on the task
+and prompt models you intend to use. If the projected costs exceed your budget or expectations, you may consider:
+
+- Reducing the number of trials (`num_trials`), the size of the valset, or the number of LM calls in your program.
+- Using a cheaper task model to optimize the prompt.
+- Setting `minibatch=True` if you haven't already.
+
+To proceed with the execution of this program, please confirm by typing 'y' for yes or 'n' for no.
+If no input is received within 20 seconds, the program will proceed automatically.
+
+If you would like to bypass this confirmation step in future executions, set the `requires_permission_to_run` flag to `False` when calling compile.
+
+Awaiting your input...
+
+Do you wish to continue? (y/n): y
+2025/06/03 19:44:54 INFO dspy.teleprompt.mipro_optimizer_v2: 
+==> STEP 1: BOOTSTRAP FEWSHOT EXAMPLES <==
+2025/06/03 19:44:54 INFO dspy.teleprompt.mipro_optimizer_v2: These will be used as few-shot example candidates for our program and for creating instructions.
+
+2025/06/03 19:44:54 INFO dspy.teleprompt.mipro_optimizer_v2: Bootstrapping N=6 sets of demonstrations...
+Bootstrapping set 1/6
+Bootstrapping set 2/6
+Bootstrapping set 3/6
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:14<00:00,  4.93s/it]
+Bootstrapped 3 full traces after 2 examples for up to 1 rounds, amounting to 3 attempts.
+Bootstrapping set 4/6
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:12<00:00,  4.19s/it]
+Bootstrapped 3 full traces after 2 examples for up to 1 rounds, amounting to 3 attempts.
+Bootstrapping set 5/6
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:15<00:00,  5.01s/it]
+Bootstrapped 3 full traces after 2 examples for up to 1 rounds, amounting to 3 attempts.
+Bootstrapping set 6/6
+ 67%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                        | 2/3 [00:09<00:04,  4.72s/it]
+Bootstrapped 2 full traces after 2 examples for up to 1 rounds, amounting to 2 attempts.
+2025/06/03 19:45:46 INFO dspy.teleprompt.mipro_optimizer_v2: 
+==> STEP 2: PROPOSE INSTRUCTION CANDIDATES <==
+2025/06/03 19:45:46 INFO dspy.teleprompt.mipro_optimizer_v2: We will use the few-shot examples from the previous step, a generated dataset summary, a summary of the program code, and a randomly selected prompting tip to propose instructions.
+2025/06/03 19:45:49 INFO dspy.teleprompt.mipro_optimizer_v2: 
+Proposing N=3 instructions...
+
+2025/06/03 19:46:26 INFO dspy.teleprompt.mipro_optimizer_v2: Proposed Instructions for Predictor 0:
+
+2025/06/03 19:46:26 INFO dspy.teleprompt.mipro_optimizer_v2: 0: Remove PII and inappropriate content from text.
+Also remove identifying information in terms of location, exact times, product name and type, store name, etc.
+Replace redacted text with generalized words or just omit the word if grammatically possible.
+Remove references to language problems, nationality, religion, gender, age, etc.
+Keep references to logistics companies like Porterbuddy, HeltHjem, Postnord, Posten, Bring, DHL, FedEx, etc.
+Output in same language as input.
+
+2025/06/03 19:46:26 INFO dspy.teleprompt.mipro_optimizer_v2: 1: You are handling sensitive customer feedback about delivery services that contain personal and identifying information. Your task is to carefully remove all personally identifiable information (PII) and any inappropriate references—including specific locations, exact times, product names, store names, personal names, language ability comments, nationality, religion, gender, and age—while preserving the core message about delivery experiences. Replace or omit redacted details with generalized terms or neutral wording to maintain grammatical correctness. Retain mentions of recognized logistics companies such as Porterbuddy, HeltHjem, Postnord, Posten, Bring, DHL, FedEx, etc. Produce a cleaned text output in the same language as the input, ensuring privacy and appropriateness even in high-stakes situations where misuse of data could cause harm. Provide a detailed step-by-step reasoning explaining how you identify and remove sensitive content before presenting the sanitized text.
+
+2025/06/03 19:46:26 INFO dspy.teleprompt.mipro_optimizer_v2: 2: You are tasked with processing customer complaint texts related to delivery services in Scandinavian countries, where the stakes are high to protect customer privacy and comply with data protection regulations. Carefully analyze the input text step-by-step to identify and remove all personally identifiable information (PII) and inappropriate content, including personal names, exact locations, precise times, product names and types, store names, and any references to language skills, nationality, religion, gender, age, or other sensitive demographic attributes. Replace removed details with appropriate generalized terms or omit them if that preserves grammatical correctness, ensuring the cleaned text remains coherent and natural. Crucially, retain any mentions of logistics companies such as Porterbuddy, HeltHjem, Postnord, Posten, Bring, DHL, FedEx, etc., as these are relevant to the context. Produce the output text in the same language as the input, maintaining the original meaning while guaranteeing privacy compliance.
+
+2025/06/03 19:46:26 INFO dspy.teleprompt.mipro_optimizer_v2: 
+
+2025/06/03 19:46:27 INFO dspy.teleprompt.mipro_optimizer_v2: ==> STEP 3: FINDING OPTIMAL PROMPT PARAMETERS <==
+2025/06/03 19:46:27 INFO dspy.teleprompt.mipro_optimizer_v2: We will evaluate the program over a series of trials with different combinations of instructions and few-shot examples to find the optimal combination using Bayesian Optimization.
+
+2025/06/03 19:46:27 INFO dspy.teleprompt.mipro_optimizer_v2: == Trial 1 / 10 - Full Evaluation of Default Program ==
+Average Metric: 9.00 / 11 (81.8%): 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 11/11 [00:07<00:00,  1.47it/s]
+2025/06/03 19:46:34 INFO dspy.evaluate.evaluate: Average Metric: 9.0 / 11 (81.8%)
+2025/06/03 19:46:34 INFO dspy.teleprompt.mipro_optimizer_v2: Default program score: 81.82
+
+/Users/knutole/dspy-demo/.venv/lib/python3.12/site-packages/optuna/_experimental.py:31: ExperimentalWarning: Argument ``multivariate`` is an experimental feature. The interface can change in the future.
+  warnings.warn(
+2025/06/03 19:46:34 INFO dspy.teleprompt.mipro_optimizer_v2: ===== Trial 2 / 10 =====
+Average Metric: 10.00 / 11 (90.9%): 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 11/11 [00:08<00:00,  1.26it/s]
+2025/06/03 19:46:43 INFO dspy.evaluate.evaluate: Average Metric: 10.0 / 11 (90.9%)
+2025/06/03 19:46:43 INFO dspy.teleprompt.mipro_optimizer_v2: Best full score so far! Score: 90.91
+2025/06/03 19:46:43 INFO dspy.teleprompt.mipro_optimizer_v2: Score: 90.91 with parameters ['Predictor 0: Instruction 1', 'Predictor 0: Few-Shot Set 3'].
+2025/06/03 19:46:43 INFO dspy.teleprompt.mipro_optimizer_v2: Scores so far: [81.82, 90.91]
+2025/06/03 19:46:43 INFO dspy.teleprompt.mipro_optimizer_v2: Best score so far: 90.91
+2025/06/03 19:46:43 INFO dspy.teleprompt.mipro_optimizer_v2: ========================
+
+
+2025/06/03 19:46:43 INFO dspy.teleprompt.mipro_optimizer_v2: ===== Trial 3 / 10 =====
+Average Metric: 8.00 / 11 (72.7%): 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 11/11 [00:11<00:00,  1.07s/it]
+2025/06/03 19:46:55 INFO dspy.evaluate.evaluate: Average Metric: 8.0 / 11 (72.7%)
+2025/06/03 19:46:55 INFO dspy.teleprompt.mipro_optimizer_v2: Score: 72.73 with parameters ['Predictor 0: Instruction 2', 'Predictor 0: Few-Shot Set 0'].
+2025/06/03 19:46:55 INFO dspy.teleprompt.mipro_optimizer_v2: Scores so far: [81.82, 90.91, 72.73]
+2025/06/03 19:46:55 INFO dspy.teleprompt.mipro_optimizer_v2: Best score so far: 90.91
+2025/06/03 19:46:55 INFO dspy.teleprompt.mipro_optimizer_v2: ========================
+
+
+2025/06/03 19:46:55 INFO dspy.teleprompt.mipro_optimizer_v2: ===== Trial 4 / 10 =====
+Average Metric: 10.00 / 11 (90.9%): 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 11/11 [00:09<00:00,  1.16it/s]
+2025/06/03 19:47:04 INFO dspy.evaluate.evaluate: Average Metric: 10.0 / 11 (90.9%)
+2025/06/03 19:47:04 INFO dspy.teleprompt.mipro_optimizer_v2: Score: 90.91 with parameters ['Predictor 0: Instruction 1', 'Predictor 0: Few-Shot Set 5'].
+2025/06/03 19:47:04 INFO dspy.teleprompt.mipro_optimizer_v2: Scores so far: [81.82, 90.91, 72.73, 90.91]
+2025/06/03 19:47:04 INFO dspy.teleprompt.mipro_optimizer_v2: Best score so far: 90.91
+2025/06/03 19:47:04 INFO dspy.teleprompt.mipro_optimizer_v2: ========================
+
+
+2025/06/03 19:47:04 INFO dspy.teleprompt.mipro_optimizer_v2: ===== Trial 5 / 10 =====
+Average Metric: 9.00 / 11 (81.8%): 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 11/11 [00:08<00:00,  1.28it/s]
+2025/06/03 19:47:13 INFO dspy.evaluate.evaluate: Average Metric: 9.0 / 11 (81.8%)
+2025/06/03 19:47:13 INFO dspy.teleprompt.mipro_optimizer_v2: Score: 81.82 with parameters ['Predictor 0: Instruction 2', 'Predictor 0: Few-Shot Set 2'].
+2025/06/03 19:47:13 INFO dspy.teleprompt.mipro_optimizer_v2: Scores so far: [81.82, 90.91, 72.73, 90.91, 81.82]
+2025/06/03 19:47:13 INFO dspy.teleprompt.mipro_optimizer_v2: Best score so far: 90.91
+2025/06/03 19:47:13 INFO dspy.teleprompt.mipro_optimizer_v2: ========================
+
+
+2025/06/03 19:47:13 INFO dspy.teleprompt.mipro_optimizer_v2: ===== Trial 6 / 10 =====
+Average Metric: 10.00 / 11 (90.9%): 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 11/11 [00:07<00:00,  1.39it/s]
+2025/06/03 19:47:21 INFO dspy.evaluate.evaluate: Average Metric: 10.0 / 11 (90.9%)
+2025/06/03 19:47:21 INFO dspy.teleprompt.mipro_optimizer_v2: Score: 90.91 with parameters ['Predictor 0: Instruction 0', 'Predictor 0: Few-Shot Set 5'].
+2025/06/03 19:47:21 INFO dspy.teleprompt.mipro_optimizer_v2: Scores so far: [81.82, 90.91, 72.73, 90.91, 81.82, 90.91]
+2025/06/03 19:47:21 INFO dspy.teleprompt.mipro_optimizer_v2: Best score so far: 90.91
+2025/06/03 19:47:21 INFO dspy.teleprompt.mipro_optimizer_v2: ========================
+
+
+2025/06/03 19:47:21 INFO dspy.teleprompt.mipro_optimizer_v2: ===== Trial 7 / 10 =====
+Average Metric: 7.00 / 11 (63.6%): 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 11/11 [00:11<00:00,  1.07s/it]
+2025/06/03 19:47:33 INFO dspy.evaluate.evaluate: Average Metric: 7.0 / 11 (63.6%)
+2025/06/03 19:47:33 INFO dspy.teleprompt.mipro_optimizer_v2: Score: 63.64 with parameters ['Predictor 0: Instruction 2', 'Predictor 0: Few-Shot Set 0'].
+2025/06/03 19:47:33 INFO dspy.teleprompt.mipro_optimizer_v2: Scores so far: [81.82, 90.91, 72.73, 90.91, 81.82, 90.91, 63.64]
+2025/06/03 19:47:33 INFO dspy.teleprompt.mipro_optimizer_v2: Best score so far: 90.91
+2025/06/03 19:47:33 INFO dspy.teleprompt.mipro_optimizer_v2: ========================
+
+
+2025/06/03 19:47:33 INFO dspy.teleprompt.mipro_optimizer_v2: ===== Trial 8 / 10 =====
+Average Metric: 9.00 / 11 (81.8%): 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 11/11 [00:08<00:00,  1.34it/s]
+2025/06/03 19:47:41 INFO dspy.evaluate.evaluate: Average Metric: 9.0 / 11 (81.8%)
+2025/06/03 19:47:41 INFO dspy.teleprompt.mipro_optimizer_v2: Score: 81.82 with parameters ['Predictor 0: Instruction 2', 'Predictor 0: Few-Shot Set 5'].
+2025/06/03 19:47:41 INFO dspy.teleprompt.mipro_optimizer_v2: Scores so far: [81.82, 90.91, 72.73, 90.91, 81.82, 90.91, 63.64, 81.82]
+2025/06/03 19:47:41 INFO dspy.teleprompt.mipro_optimizer_v2: Best score so far: 90.91
+2025/06/03 19:47:41 INFO dspy.teleprompt.mipro_optimizer_v2: ========================
+
+
+2025/06/03 19:47:41 INFO dspy.teleprompt.mipro_optimizer_v2: ===== Trial 9 / 10 =====
+Average Metric: 9.00 / 11 (81.8%): 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 11/11 [00:07<00:00,  1.44it/s]
+2025/06/03 19:47:48 INFO dspy.evaluate.evaluate: Average Metric: 9.0 / 11 (81.8%)
+2025/06/03 19:47:48 INFO dspy.teleprompt.mipro_optimizer_v2: Score: 81.82 with parameters ['Predictor 0: Instruction 1', 'Predictor 0: Few-Shot Set 4'].
+2025/06/03 19:47:48 INFO dspy.teleprompt.mipro_optimizer_v2: Scores so far: [81.82, 90.91, 72.73, 90.91, 81.82, 90.91, 63.64, 81.82, 81.82]
+2025/06/03 19:47:48 INFO dspy.teleprompt.mipro_optimizer_v2: Best score so far: 90.91
+2025/06/03 19:47:48 INFO dspy.teleprompt.mipro_optimizer_v2: ========================
+
+
+2025/06/03 19:47:48 INFO dspy.teleprompt.mipro_optimizer_v2: ===== Trial 10 / 10 =====
+Average Metric: 10.00 / 11 (90.9%): 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 11/11 [00:08<00:00,  1.31it/s]
+2025/06/03 19:47:57 INFO dspy.evaluate.evaluate: Average Metric: 10.0 / 11 (90.9%)
+2025/06/03 19:47:57 INFO dspy.teleprompt.mipro_optimizer_v2: Score: 90.91 with parameters ['Predictor 0: Instruction 2', 'Predictor 0: Few-Shot Set 5'].
+2025/06/03 19:47:57 INFO dspy.teleprompt.mipro_optimizer_v2: Scores so far: [81.82, 90.91, 72.73, 90.91, 81.82, 90.91, 63.64, 81.82, 81.82, 90.91]
+2025/06/03 19:47:57 INFO dspy.teleprompt.mipro_optimizer_v2: Best score so far: 90.91
+2025/06/03 19:47:57 INFO dspy.teleprompt.mipro_optimizer_v2: =========================
+
+
+2025/06/03 19:47:57 INFO dspy.teleprompt.mipro_optimizer_v2: ===== Trial 11 / 10 =====
+Average Metric: 11.00 / 11 (100.0%): 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 11/11 [00:07<00:00,  1.43it/s]
+2025/06/03 19:48:05 INFO dspy.evaluate.evaluate: Average Metric: 11.0 / 11 (100.0%)
+2025/06/03 19:48:05 INFO dspy.teleprompt.mipro_optimizer_v2: Best full score so far! Score: 100.0
+2025/06/03 19:48:05 INFO dspy.teleprompt.mipro_optimizer_v2: Score: 100.0 with parameters ['Predictor 0: Instruction 1', 'Predictor 0: Few-Shot Set 3'].
+2025/06/03 19:48:05 INFO dspy.teleprompt.mipro_optimizer_v2: Scores so far: [81.82, 90.91, 72.73, 90.91, 81.82, 90.91, 63.64, 81.82, 81.82, 90.91, 100.0]
+2025/06/03 19:48:05 INFO dspy.teleprompt.mipro_optimizer_v2: Best score so far: 100.0
+2025/06/03 19:48:05 INFO dspy.teleprompt.mipro_optimizer_v2: =========================
+
+
+2025/06/03 19:48:05 INFO dspy.teleprompt.mipro_optimizer_v2: Returning best identified program with score 100.0!
