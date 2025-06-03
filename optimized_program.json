@@ -1,0 +1,51 @@
+{
+  "chain.predict": {
+    "traces": [],
+    "train": [],
+    "demos": [
+      {
+        "augmented": true,
+        "text": "Jeg visste at pakken kom og var hjemme. Fikk plutselig melding at jeg ikke var hjemme! Og at jeg måtte hente en diger forpose på 7 kg på postkontoret. Veldig dårlig. Mitt mobilnr stod på esken! Ikke første gang sjåføren ikke gidder å levere! \n\nMvh Lise",
+        "reasoning": "The text contains a personal name (\"Lise\") and a mobile number reference (\"Mitt mobilnr stod på esken!\"). To protect privacy, the name should be removed or generalized, and the mention of the mobile number should be kept but without any actual number. The rest of the text is a complaint about delivery service and does not contain inappropriate content or other PII. The company name is not mentioned, so no need to keep or remove it. The text is in Norwegian, so the output should remain in Norwegian.",
+        "clean_text": "Jeg visste at pakken kom og var hjemme. Fikk plutselig melding at jeg ikke var hjemme! Og at jeg måtte hente en diger forpose på 7 kg på postkontoret. Veldig dårlig. Mobilnummeret mitt stod på esken! Ikke første gang sjåføren ikke gidder å levere!"
+      },
+      {
+        "augmented": true,
+        "text": "Jag bor på Marstrand, en ö. Jag brukar beställa vin från the Wine Company. Under de sista tio åren har Bring levererat varorna till Marstrand Samlastning på Koön, fastlandssidan, som i sin tur levererat varorna till min bostad. Nu, helt plötsligt, får chauffören från Bring inte avlämnavarorna hos Marstrands Samlastning. Skäl: alkoholhaltiga varor måste signeras av adressaten, dvs Marstrands Samlastning kan inte användas som ombud längre.\nDetta medför en stor olägenhet för mig som kund. Jag måste ta färjan till Koön och ta emot leveransen från Bring, lasta varorna på en kärra, ta färjan tillbaks och släpa hem de till bostaden.\nMarstrand är en väldigt liten ort där alla känner alla och litar på varandra. Att utsättas för \nonödiga och försvårande regler känns väldigt tråkigt.\nMed vänlig hälsning,\nJosefina",
+        "reasoning": "The text contains specific location names (Marstrand, Koön), a company name (the Wine Company), and a delivery company (Bring). According to the instructions, location names and company names related to stores or product providers should be removed or generalized, but logistics companies like Bring should be kept. The personal name \"Josefina\" should be removed as it is personally identifying information. The text also mentions alcohol delivery and the requirement for signature, which is relevant to the logistics context and should be kept. The language is Swedish and should remain so.",
+        "clean_text": "Jag bor på en ö. Jag brukar beställa vin från en vinleverantör. Under de sista tio åren har Bring levererat varorna till en samlastningsplats på fastlandssidan, som i sin tur levererat varorna till min bostad. Nu, helt plötsligt, får chauffören från Bring inte avlämna varorna hos samlastningsplatsen. Skäl: alkoholhaltiga varor måste signeras av adressaten, dvs samlastningsplatsen kan inte användas som ombud längre.  \nDetta medför en stor olägenhet för mig som kund. Jag måste ta färjan till fastlandet och ta emot leveransen från Bring, lasta varorna på en kärra, ta färjan tillbaka och släpa hem dem till bostaden.  \nDet är en väldigt liten ort där alla känner alla och litar på varandra. Att utsättas för onödiga och försvårande regler känns väldigt tråkigt.  \nMed vänlig hälsning,"
+      },
+      {
+        "augmented": true,
+        "text": "ni levererade den, men chaffören leverade till porten och inte till dörren, stod klart o tydligt levererat till dörr och jag fyllde i våning samt lgn nr hiss finns, men han tyckte jag skulle komma ner och bära upp den själv, hjälpte inte att han knappt kunde prata svenska o mumlade så jag slutade kommunicera skrev på. då kunde han svenska igen och sa klockrent tack och hejdå",
+        "reasoning": "The text contains a customer complaint about a delivery service. There is no personal identifying information such as names, addresses, or exact times. However, the text includes a reference to the driver's language skills, which could be considered sensitive or inappropriate. To comply with the guidelines, I will remove the reference to the driver's language ability and mumbling, as it relates to language problems. The rest of the text is a general description of the delivery experience and can remain as is.",
+        "clean_text": "Ni levererade den, men chauffören levererade till porten och inte till dörren, stod klart och tydligt levererat till dörr och jag fyllde i våning samt lägenhetsnummer, hiss finns, men han tyckte jag skulle komma ner och bära upp den själv. Jag slutade kommunicera och skrev på. Då sa han tack och hejdå."
+      }
+    ],
+    "signature": {
+      "instructions": "You are handling sensitive customer feedback about delivery services that contain personal and identifying information. Your task is to carefully remove all personally identifiable information (PII) and any inappropriate references—including specific locations, exact times, product names, store names, personal names, language ability comments, nationality, religion, gender, and age—while preserving the core message about delivery experiences. Replace or omit redacted details with generalized terms or neutral wording to maintain grammatical correctness. Retain mentions of recognized logistics companies such as Porterbuddy, HeltHjem, Postnord, Posten, Bring, DHL, FedEx, etc. Produce a cleaned text output in the same language as the input, ensuring privacy and appropriateness even in high-stakes situations where misuse of data could cause harm. Provide a detailed step-by-step reasoning explaining how you identify and remove sensitive content before presenting the sanitized text.",
+      "fields": [
+        {
+          "prefix": "Text:",
+          "description": "The text to clean"
+        },
+        {
+          "prefix": "Reasoning: Let's think step by step in order to",
+          "description": "${reasoning}"
+        },
+        {
+          "prefix": "Clean Text:",
+          "description": "The cleaned text"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.12",
+      "dspy": "2.6.25",
+      "cloudpickle": "3.1"
+    }
+  }
+}

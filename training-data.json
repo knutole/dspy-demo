@@ -1,0 +1,207 @@
+[
+    {
+        "id": 1,
+        "text": "Jag bor på Marstrand, en ö. Jag brukar beställa vin från the Wine Company. Under de sista tio åren har Bring levererat varorna till Marstrand Samlastning på Koön, fastlandssidan, som i sin tur levererat varorna till min bostad. Nu, helt plötsligt, får chauffören från Bring inte avlämnavarorna hos Marstrands Samlastning. Skäl: alkoholhaltiga varor måste signeras av adressaten, dvs Marstrands Samlastning kan inte användas som ombud längre.\nDetta medför en stor olägenhet för mig som kund. Jag måste ta färjan till Koön och ta emot leveransen från Bring, lasta varorna på en kärra, ta färjan tillbaks och släpa hem de till bostaden.\nMarstrand är en väldigt liten ort där alla känner alla och litar på varandra. Att utsättas för \nonödiga och försvårande regler känns väldigt tråkigt.\nMed vänlig hälsning,\nJosefina",
+        "redactions": [
+            "Marstrand",
+            "the Wine Company",
+            "Marstrand Samlastning",
+            "Koön",
+            "Josefina"
+        ]
+    },
+    {
+        "id": 2,
+        "text": "ni levererade den, men chaffören leverade till porten och inte till dörren, stod klart o tydligt levererat till dörr och jag fyllde i våning samt lgn nr hiss finns, men han tyckte jag skulle komma ner och bära upp den själv, hjälpte inte att han knappt kunde prata svenska o mumlade så jag slutade kommunicera skrev på. då kunde han svenska igen och sa klockrent tack och hejdå",
+        "redactions": [
+            "svenska"
+        ]
+    },
+    {
+        "id": 827476,
+        "text": "Jeg visste at pakken kom og var hjemme. Fikk plutselig melding at jeg ikke var hjemme! Og at jeg måtte hente en diger forpose på 7 kg på postkontoret. Veldig dårlig. Mitt mobilnr stod på esken! Ikke første gang sjåføren ikke gidder å levere! \n\nMvh Lise",
+        "redactions": [
+            "Lise"
+        ]
+    },
+    {
+        "id": 827398,
+        "text": "Han var så på tiden at det var en fryd : jeg gikk ut og ventet når jeg så bilen nærmet seg så slapp han å vente på meg så takk dette var flott service Mvh Sigurd Larsen Langveien 11 3408 Traneby",
+        "redactions": [
+            "Sigurd Larsen",
+            "Langveien 11 3408 Traneby"
+        ]
+    },
+    {
+        "id": 827599,
+        "text": "Sjåfören från Bring kom aldrig till rätt adress! Jag bor på Storgatan 15 i Malmö och han levererade till Storgatan 51 istället. Grannen Erik Petersson fick ta emot paketet och ringa mig. Nu måste jag gå dit och hämta det själv. Varför kan inte chaufförerna läsa adresser ordentligt? Det här händer för ofta med Bring. Mycket frustrerande!\n\nHälsningar,\nAnna Lindqvist",
+        "redactions": [
+            "Storgatan 15",
+            "Malmö",
+            "Storgatan 51",
+            "Erik Petersson",
+            "Anna Lindqvist"
+        ]
+    },
+    {
+        "id": 827612,
+        "text": "Jeg bestilte en pakke fra IKEA som skulle leveres til min leilighet på Grünerløkka. Sjåføren ringte og sa han var utenfor, men jeg så ingen bil! Viste seg at han sto på feil side av Trondheimsveien. Da jeg kom ned hadde han kjørt videre og la igjen en lapp om at jeg ikke var hjemme. Måtte hente pakken på butikken dagen etter. Elendig service!\n\nMvh Ole Henrik Svendsen\nTrondheimsveien 142A",
+        "redactions": [
+            "IKEA",
+            "Grünerløkka",
+            "Trondheimsveien",
+            "Ole Henrik Svendsen",
+            "Trondheimsveien 142A"
+        ]
+    },
+    {
+        "id": 827645,
+        "text": "Fantastisk service från Posten! Chauffören Marcus kom precis i tid och hjälpte mig att bära upp den tunga paketen från Elgiganten till tredje våningen. Bor på Vasagatan 28 i Stockholm och hissen var trasig. Han var så trevlig och professionell. Sådan här service får mig att fortsätta handla online!\n\nTack så mycket,\nIngrid Holm",
+        "redactions": [
+            "Marcus",
+            "Elgiganten",
+            "Vasagatan 28",
+            "Stockholm",
+            "Ingrid Holm"
+        ]
+    },
+    {
+        "id": 827688,
+        "text": "beställde från Zalando och paketet skulle komma mellan 12-16. Jag tog ledigt från jobbet för att vänta. Klockan 17.30 får jag sms att leverans misslyckades för att jag inte var hemma! Jag var hemma hela dagen och ringde inte ens på dörren. Bring-chauffören ljög rakt av. Nu ligger paketet på ICA Kvantum i Täby och jag måste åka dit imorgon. Helt oacceptabelt.\n\nMvh Peter Johansson\n+46 70 123 4567",
+        "redactions": [
+            "Zalando",
+            "17.30",
+            "ICA Kvantum",
+            "Täby",
+            "Peter Johansson",
+            "+46 70 123 4567"
+        ]
+    },
+    {
+        "id": 827701,
+        "text": "Kjempebra levering fra Posten! Pakken fra Komplett kom akkurat når dere sa den skulle komme. Sjåføren var hyggelig og lot meg åpne pakken for å sjekke at alt var ok før han kjørte. Bor på Fjellveien 7 i Bergen og det er ikke alltid lett å finne, men han fant det uten problemer. Tusen takk!\n\nMvh Kari Danielsen",
+        "redactions": [
+            "Komplett",
+            "Fjellveien 7",
+            "Bergen",
+            "Kari Danielsen"
+        ]
+    },
+    {
+        "id": 827734,
+        "text": "Leveransen från H&M kom två dagar för sent! Jag hade beställt kläder till en fest på lördag och fick dem först på måndag. DB Schenker sa att det var trafikproblem men jag vet att paketet låg på terminalen i Göteborg i tre dagar utan anledning. Bodde hemma på Kungsgatan 12 och väntade. Kundtjänst var helt ointresserade av att hjälpa.\n\n/Magnus Karlsson",
+        "redactions": [
+            "H&M",
+            "Göteborg",
+            "Kungsgatan 12",
+            "Magnus Karlsson"
+        ]
+    },
+    {
+        "id": 827750,
+        "text": "Sjåføren fra Bring kunne ikke finne veien til Sagene! Jeg bor på Colletts gate 34 og han kjørte rundt i Grünerløkka i en time. Ringte meg og sa han var lost men jeg kunne ikke forlate jobbet. Pakken fra Apple endte opp på et utleveringssted i Tøyen som er helt andre siden av byen. Må ta T-bane dit etter jobb. Hvorfor bruker de ikke GPS?\n\nMvh Astrid Haugen\nColletts gate 34, 0358 Oslo",
+        "redactions": [
+            "Sagene",
+            "Colletts gate 34",
+            "Grünerløkka",
+            "Apple",
+            "Tøyen",
+            "Astrid Haugen",
+            "Colletts gate 34, 0358 Oslo"
+        ]
+    },
+    {
+        "id": 827763,
+        "text": "Helt fantastisk upplevelse! Jag hade beställt en dyr kamera från Fotosidan och var orolig för leveransen. Chauffören Lars ringde innan han kom, levererade exakt när han sa, och bad mig att kontrollera paketet innan han lämnade. Bor på Brahegatan 7 i Göteborg och han hittade dit utan problem trots att det är svårt att hitta. Professionellt och omtänksamt!",
+        "redactions": [
+            "Fotosidan",
+            "Lars",
+            "Brahegatan 7",
+            "Göteborg"
+        ]
+    },
+    {
+        "id": 827789,
+        "text": "Pakken fra Boozt.com ble levert til feil etasje! Jeg bor i andre etasje på Heimdalsgata 15 men sjåføren la den utenfor døra på tredje etasje. Heldigvis var naboen Torstein hjemme og tok vare på den. Han hadde ikke engang ringt på dørklocka mi først! Måtte gå opp og hente selv. Skjønner ikke hvorfor leverandører ikke kan lese adresser skikkelig.\n\nMvh Nina Olsen",
+        "redactions": [
+            "Boozt.com",
+            "Heimdalsgata 15",
+            "Torstein",
+            "Nina Olsen"
+        ]
+    },
+    {
+        "id": 827801,
+        "text": "Chauffören kom för tidigt! Paketet från MediaMarkt skulle levereras mellan 14-18 men han kom redan klockan 12.30 när jag var på lunch. Lämnade en lapp om omlevering men när jag kollade online hade han redan kört paketet tillbaka till terminalen i Södertälje. Nu måste jag vänta till måndag för ny leverans. Varför kommer de inte enligt schema?\n\nHälsningar Erik Lindahl\nRingvägen 45, Stockholm",
+        "redactions": [
+            "MediaMarkt",
+            "12.30",
+            "Södertälje",
+            "Erik Lindahl",
+            "Ringvägen 45, Stockholm"
+        ]
+    },
+    {
+        "id": 827824,
+        "text": "Bring-sjåføren var utrolig hyggelig! Pakken fra Elkjøp var kjempetung (en vaskmaskin) og han bar den helt opp til andre etasje på Markveien 32 selv om det ikke var inkludert i leveransen. Spurte om jeg trengte hjelp til å få den inn også. Slik service får en til å smile! Kommer definitivt til å handle fra Elkjøp igjen.\n\nTusen takk,\nBjørn Andersen",
+        "redactions": [
+            "Elkjøp",
+            "vaskmaskin",
+            "Markveien 32",
+            "Bjørn Andersen"
+        ]
+    },
+    {
+        "id": 827846,
+        "text": "Helt uselt från Posten Bring! Jag beställde datadelar från Webhallen som skulle komma på fredag. På torsdag får jag mejl att leveransen är försenad till måndag. På måndag säger de tisdag. På tisdag kommer den inte alls! Ringer kundtjänst och de säger att paketet \"är spårlöst\". Bor på Drottninggatan 89 i Uppsala och har fått leveranser hit i 10 år utan problem. Vad händer egentligen?\n\nMvh Lisa Bergström\nTel: 018-123456",
+        "redactions": [
+            "Webhallen",
+            "måndag",
+            "tisdag",
+            "Drottninggatan 89",
+            "Uppsala",
+            "Lisa Bergström",
+            "018-123456"
+        ]
+    },
+    {
+        "id": 827867,
+        "text": "Posten-sjåføren kunne ikke finne Lørenskog! Jeg bestilte fra Komplett.no og pakken skulle komme til Industriveien 12. Han ringte og sa han var i Lillestrøm og lurte på hvor Lørenskog var. Det er nabokommunen! Måtte forklare veibeskrivelse over telefon i 20 minutter. Til slutt kom han, men 3 timer etter avtalt tid. Ansett bedre lokalkjennskap!",
+        "redactions": [
+            "Lørenskog",
+            "Komplett.no",
+            "Industriveien 12",
+            "Lillestrøm"
+        ]
+    },
+    {
+        "id": 827883,
+        "text": "Suverän leverans från dere! Chauffören kom exakt när han sa att han skulle komma till vårt kontor på Sergels torg 12. Paketet från HP var stort och tungt men han bar det hela vägen till sjätte våningen utan att klaga. Frågade till och med om vi behövde hjälp att packa upp det. Så här ska service vara!\n\nMed vänliga hälsningar,\nCecilia Mårtensson\nHP Sverige AB",
+        "redactions": [
+            "Sergels torg 12",
+            "HP",
+            "Cecilia Mårtensson",
+            "HP Sverige AB"
+        ]
+    },
+    {
+        "id": 827901,
+        "text": "Chauffören leverte pakken til feil by! Jeg bor i Drammen men pakken fra Amazon ble levert til en adresse i Tønsberg. Samme gatename (Øvre Storgate 25) men helt feil by! Nå må jeg kjøre 1 time hver vei for å hente pakken selv. Amazon kundservice sa de ikke kunne gjøre noe siden de hadde \"levert den\". Helt håpløst system!",
+        "redactions": [
+            "Drammen",
+            "Amazon",
+            "Tønsberg",
+            "Øvre Storgate 25"
+        ]
+    },
+    {
+        "id": 827925,
+        "text": "Jättetrevlig Bring-chaufför! Paketet från Adidas kom till Linnégatan 18 i Malmö precis enligt plan. Hon hjälpte till att bära upp det trots att hon hade ont i ryggen. Vi pratade lite och hon berättade att hon varit chaufför i 15 år och älskar sitt jobb. Sådan positiv attityd smittar av sig! Hoppas hon får vara vår ordinarie chaufför.\n\nTack!\nEmma Svensson",
+        "redactions": [
+            "Adidas",
+            "Linnégatan 18",
+            "Malmö",
+            "Emma Svensson"
+        ]
+    }
+]
