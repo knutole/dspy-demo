@@ -91,7 +91,7 @@ def optimize_program():
     optimized_program = optimizer.compile(program.deepcopy(), trainset=trainset)
 
     # save your results
-    optimized_program.save("optimized_program2.json")
+    optimized_program.save("optimized_program.json")
 
 
 def use_optimized_program():
